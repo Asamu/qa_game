@@ -1,0 +1,152 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 70px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 2em;
+}
+
+.App-intro {
+  font-size: xx-large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.table-container {
+  /* max-width: 75vw; */
+  display: inline-block;
+  margin: 0 auto;
+  width: 75vw;
+  height: 75vh;
+  padding-top: 100px; 
+}
+
+table {
+  /* border: 2px solid #ddd !important; */
+  border: 2px solid #ddd !important;
+  cursor: default !important;
+  height: 100%;
+  font-size: xx-large;
+}
+
+th {
+  border: 2px solid #ddd !important;
+  text-align: center;
+  vertical-align: middle !important;
+}
+td {
+  border: 2px solid #ddd !important;
+  transition: box-shadow .3s, font-size .3s;
+  position: relative;
+  text-align: center;
+  vertical-align: middle !important;
+  width: 11vw;
+}
+td:hover {
+  box-shadow: 0 0 20px rgba(33, 33, 33, .5);
+  font-size: larger;
+}
+
+a {
+  color: #111 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+}
+
+div.questionContainer {
+  position: relative;
+  height: 90vh;
+}
+
+div.backBtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 15px;
+  margin: 5px;
+  border: 1px solid #777;
+  border-radius: 10px;
+  font-size: x-large;
+  cursor: pointer;
+}
+
+div.ansBtn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px; 
+  padding: 15px;
+  margin: 5px;
+  border: 1px solid #777;
+  border-radius: 10px;
+  font-size: x-large;
+  cursor: pointer;
+}
+
+td div {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+td div.used {
+ background-color: rgba(100, 100, 100, .3) !important;
+}
+
+.center, img, audio {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  max-width: calc(95vw - 250px);
+  max-height: calc(95vh - 100px);
+  object-fit: contain;
+}
+
+img.questionType {
+  cursor: pointer;
+}
+
+img.question {
+  transition: opacity .5s ease-in-out;
+  opacity: 1;
+}
+
+img.question.getAnswer {
+  opacity: 0;
+}
+
+img.answer {
+  transition: opacity .5s ease-in-out;
+  opacity: 0;
+}
+
+img.answer.getAnswer {
+  opacity: 1;
+}
+
+div.title {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 2rem;
+
+}
