@@ -1,12 +1,10 @@
+/* general */
 .App {
   text-align: center;
+  font-weight: bold;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
+/* 標題 */
 .App-header {
   background-color: #222;
   height: 70px;
@@ -15,33 +13,27 @@
 }
 
 .App-title {
-  font-size: 2em;
+  font-size: 2.5rem;
+  color: white !important;
 }
 
-.App-intro {
-  font-size: xx-large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
+/* table外層用一個div來限制整體大小 */
 .table-container {
   /* max-width: 75vw; */
   display: inline-block;
   margin: 0 auto;
   width: 75vw;
-  height: 75vh;
+  height: 85vh;
   padding-top: 100px; 
 }
 
+/* table本身是用現成的bootstrap4 table react component */
 table {
   /* border: 2px solid #ddd !important; */
   border: 2px solid #ddd !important;
   cursor: default !important;
   height: 100%;
-  font-size: xx-large;
+  font-size: 2.5rem;
 }
 
 th {
@@ -62,41 +54,7 @@ td:hover {
   font-size: larger;
 }
 
-a {
-  color: #111 !important;
-  text-decoration: none !important;
-  cursor: pointer !important;
-}
-
-div.questionContainer {
-  position: relative;
-  height: 90vh;
-}
-
-div.backBtn {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 15px;
-  margin: 5px;
-  border: 1px solid #777;
-  border-radius: 10px;
-  font-size: x-large;
-  cursor: pointer;
-}
-
-div.ansBtn {
-  position: absolute;
-  right: 10px;
-  bottom: 10px; 
-  padding: 15px;
-  margin: 5px;
-  border: 1px solid #777;
-  border-radius: 10px;
-  font-size: x-large;
-  cursor: pointer;
-}
-
+/* 用來填滿td讓文字正確置中以及陰影正確顯示在整個td外 */
 td div {
   top: 0;
   left: 0;
@@ -108,17 +66,66 @@ td div {
   justify-content: center;
 }
 
+/* 已經看過答案的題目 */
 td div.used {
  background-color: rgba(100, 100, 100, .3) !important;
 }
 
+a {
+  color: #111 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+}
+
+/* 標示題號、題型的文字 */
+div.questionTitle {
+  padding: 5px;
+  margin: 5px;
+  font-size: 2.5rem;  
+}
+
+/* 放圖的外層容器 */
+div.questionContainer {
+  position: relative;
+  height: 90vh;
+}
+
+/* 左上角回主頁 */
+div.backBtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 15px;
+  margin: 5px;
+  border: 1px solid #777;
+  border-radius: 10px;
+  font-size: x-large;
+  cursor: pointer;
+  background-color: skyblue;
+}
+
+/* 右下答案按鈕 */
+div.ansBtn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px; 
+  padding: 15px;
+  margin: 5px;
+  border: 1px solid #777;
+  border-radius: 10px;
+  font-size: x-large;
+  cursor: pointer;
+  background-color: orangered;
+}
+
+/* 內容物置中 */
 .center, img, audio {
   position: absolute;
   left: 50%;
   top: 50%;
   -webkit-transform: translateY(-50%) translateX(-50%);
   max-width: calc(95vw - 250px);
-  max-height: calc(95vh - 100px);
+  max-height: calc(95vh - 170px);
   object-fit: contain;
 }
 
@@ -126,27 +133,31 @@ img.questionType {
   cursor: pointer;
 }
 
-img.question {
+/* 淡出淡入動畫 */
+.question {
   transition: opacity .5s ease-in-out;
   opacity: 1;
+  z-index: 5;
 }
-
-img.question.getAnswer {
+.question.getAnswer {
   opacity: 0;
 }
-
-img.answer {
+.answer {
   transition: opacity .5s ease-in-out;
   opacity: 0;
+  z-index: 1;
 }
-
-img.answer.getAnswer {
+.answer.getAnswer {
   opacity: 1;
 }
+/* ////// */
 
-div.title {
-  text-align: center;
-  margin: 0 auto;
-  font-size: 2rem;
 
+audio {
+  width: 50vw;
+}
+
+/* 文字題的字 */
+div.questionText {
+  font-size: 6rem;
 }

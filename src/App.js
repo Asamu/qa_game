@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 import QAPage from './QAPage';
 import IndexPage from './IndexPage';
@@ -26,16 +26,12 @@ class App extends Component {
         return (
             <div className="App">
                 <header className="App-header">
-                    {/* <img src={logo} className="App-logo" alt="logo" /> */}
-                    <h1 className="App-title">電影問答</h1>
+                    <Link to ="/"><h1 className="App-title">電影問答</h1></Link>
                 </header>
-                {/* <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-                </p> */}
 
                 <Switch>
                     <Route exact path="/" render={() => { return <IndexPage questionHistory={ this.state.questionHistory } />; }} />
-                    <Route path="/:quesType/:number/" render={() => { return <QAPage questionHistoryFunc={ this.updateQuestionHistory.bind(this) } />; }} />
+                    <Route path="/:type/:level/:quesType/:number/" render={() => { return <QAPage questionHistoryFunc={ this.updateQuestionHistory.bind(this) } />; }} />
                 </Switch>
             </div>
         );
