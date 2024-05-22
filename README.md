@@ -1,0 +1,2 @@
+# qagame
+for specific event
