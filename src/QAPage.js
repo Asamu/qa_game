@@ -103,8 +103,8 @@ class QAPage extends Component {
                 <div className="questionTitle">{`${number}. ${typeCh} - ${levelCh}`}</div>
                 { this.state.questionType &&
                 <img className="questionType"
-                    src={`/quesType_${this.state.mouseOn ? 'mouseOn' : questionType }.jpg`}
-                    alt={`/quesType_${this.state.mouseOn ? 'mouseOn' : questionType }.jpg`}
+                    src={`/qa_game/quesType_${this.state.mouseOn ? 'mouseOn' : questionType }.jpg`}
+                    alt={`/qa_game/quesType_${this.state.mouseOn ? 'mouseOn' : questionType }.jpg`}
                     draggable="false"
                     onClick={ this.closeQuestionType.bind(this) }
                     onMouseOver={ this.mouseOnTypeImg.bind(this) }
