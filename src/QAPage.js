@@ -17,7 +17,7 @@ class QAPage extends Component {
 
     componentDidMount () {
         if (this.props.match.params.quesType === 'text') {
-            fetch(`/qafile/q${this.props.match.params.number}.txt`, {
+            fetch(`/qa_game/qafile/q${this.props.match.params.number}.txt`, {
                 method: 'GET'
             })
                 .then(response => (
@@ -59,14 +59,14 @@ class QAPage extends Component {
         switch (type) {
         case 'img':
             return (
-                <img className={ this.state.answer ? 'question getAnswer' : 'question'} src={`/qafile/q${number}.jpg`} alt={`/qafile/q${number}.jpg`} draggable="false"/>
+                <img className={ this.state.answer ? 'question getAnswer' : 'question'} src={`/qa_game/qafile/q${number}.jpg`} alt={`/qafile/q${number}.jpg`} draggable="false"/>
             );
         case 'audio':
             return (
                 <audio controls autoplay="autoplay"
                     className={ this.state.answer ? 'question getAnswer' : 'question'}
                     ref={(audio) => { this.audio = audio }}>
-                    <source src={`/qafile/q${number}.mp3`} type="audio/mpeg" />
+                    <source src={`/qa_game/qafile/q${number}.mp3`} type="audio/mpeg" />
                     Your browser does not support the audio element.
                 </audio>
             );
@@ -111,7 +111,7 @@ class QAPage extends Component {
                     onMouseOut={ this.mouseOnTypeImg.bind(this) } /> }
                 {/* <img className={ this.state.answer ? 'question getAnswer' : 'question'} src={`/qafile/q${number}`} draggable="false"/> */}
                 { !this.state.questionType && questionBlock }
-                { !this.state.questionType && <img className={ this.state.answer ? 'answer getAnswer' : 'answer'} src={`/qafile/a${number}.jpg`} alt={`/qafile/a${number}.jpg`} draggable="false"/> }
+                { !this.state.questionType && <img className={ this.state.answer ? 'answer getAnswer' : 'answer'} src={`/qa_game/qafile/a${number}.jpg`} alt={`/qa_game/qafile/a${number}.jpg`} draggable="false"/> }
                 {/* <audio controls autoplay="autoplay">
                     <source src="/qafile/q2" type="audio/mpeg" />
                     Your browser does not support the audio element.
