@@ -2431,4 +2431,5 @@ In the future, we might start automatically compiling incompatible third-party m
 ## Something Missing?
 
 If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/facebookincubator/create-react-app/issues) or [contribute some!](https://github.com/facebookincubator/create-react-app/edit/master/packages/react-scripts/template/README.md) -->
-A simple Q&A game for specific event
+A simple Q&A game for specific event.
+only Q1~3 is available here and it's image, music and text question respectively.
